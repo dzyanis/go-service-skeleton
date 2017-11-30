@@ -9,8 +9,8 @@ import (
 
 var (
     RELEASE = "unset"
-    REPO = "unset"
     COMMIT = "unset"
+    BUILD_TIME = "unset"
 )
 
 func main() {
@@ -30,8 +30,8 @@ func main() {
     r.GET("/info", func(c *gin.Context) {
         c.JSON(http.StatusOK, gin.H{
             "RELEASE": RELEASE,
-            "REPO": REPO,
             "COMMIT": COMMIT,
+            "BUILD_TIME": BUILD_TIME,
         })
     })
     r.GET("/healthz", func(c *gin.Context) {
